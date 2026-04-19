@@ -4,9 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>КУБЫПОБЕДА.РФ</title>
-  <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
 </head>
+<style>
+  body {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  h1 {
+    color: #326ce5;
+    font-size: 6em;
+  }
+
+  table {
+    border-spacing: 1em;
+  }
+
+  th {
+    max-width: 300px;
+  }
+
+  h2 {
+    color: #0f1316;
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    color: #5f6368;
+    font-size: 2rem;
+  }
+
+  .fact-card {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    border-color: #e2e8f0;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1em;
+  }
+
+  .fact-title {
+    color: #0f1316;
+    font-size: 1.5rem;
+    font-style: normal;
+    text-align: left;
+  }
+
+  .fact-desc {
+    color: #5f6368;
+    text-align: left;
+  }
+
+  .reason-title {
+    color: #5f6368;
+    font-size: 1.5rem;
+  }
+
+  .spinning-logo {
+    max-width: 220px;
+    max-height: 220px;
+  }
+
+  .counter-item {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 3rem;
+    text-align: center;
+    padding: 0 1em;
+  }
+
+  .counter-section {
+    background-color: #326ce5;
+    color: #fff;
+    padding: 4em;
+    border-radius: 20px;
+  }
+
+  .number {
+    display: block;
+  }
+
+  .stability-title {
+    color: #fff;
+  }
+
+  #victory-counter {
+    margin: 2em auto;
+    border-spacing: 4em;
+    display: table;
+    background-color: #0f131629;
+  }
+</style>
 <body>
   <div class="hero">
     <div id="hero-background"></div>
@@ -16,47 +107,34 @@
       <h1>КУБЫПОБЕДА</h1>
       <p class="subtitle">Очередной год победы Kubernetes</p>
     </div>
-    <a href="#main-content" class="scroll-down-arrow">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 5v14M19 12l-7 7-7-7"/>
-      </svg>
-    </a>
   </div>
 
   <main id="main-content" class="content">
-    <section class="centered">
+    <div class="centered">
       <h2>Статус: SYNCING</h2>
       <p class="reason-title">
         Почему <span id="current-year"></span> это год кубов?
       </p>
-      
-      <div class="facts-grid">
-        <div class="fact-card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M2 15h10"/><path d="M9 18v-6"/></svg>
-          </div>
-          <h3>YAML Native</h3>
-          <p>Родной язык конфигурации. Отступы важнее смысла, а количество строк измеряется тысячами.</p>
-        </div>
-        <div class="fact-card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <h3>OOMKilled</h3>
-          <p>Не ошибка, а запланированная процедура очистки памяти. Решение всегда одно - увеличить лимиты.</p>
-        </div>
-        <div class="fact-card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-          </div>
-          <h3>Масштаб</h3>
-          <p>Зачем один сервер, если можно поднять целый кластер ради статического сайта? (но, увы, не в этом случае)</p>
-        </div>
-      </div>
-    </section>
+      <table class="facts-grid">
+        <tr>
+          <td class="fact-card">
+            <h3 class="fact-title">YAML Native</h3>
+            <p class="fact-desc">Родной язык конфигурации. Отступы важнее смысла, а количество строк измеряется тысячами.</p>
+          </td>
+          <td class="fact-card">
+            <h3 class="fact-title">OOMKilled</h3>
+            <p class="fact-desc">Не ошибка, а запланированная процедура очистки памяти. Решение всегда одно - увеличить лимиты.</p>
+          </td>
+          <td class="fact-card">
+            <h3 class="fact-title">Масштаб</h3>
+            <p class="fact-desc">Зачем один сервер, если можно поднять целый кластер ради статического сайта? (но, увы, не в этом случае)</p>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-    <section class="centered counter-section">
-      <h2>Стабильность кластера</h2>
+    <div class="centered counter-section">
+      <h2 class="stability-title">Стабильность кластера</h2>
       <div id="victory-counter" class="counter">
         <div class="counter-item">
           <span class="number" id="counter-hours">00</span>
@@ -78,12 +156,12 @@
       <p class="counter-desc">
         Времени прошло с момента последнего Pending пода
       </p>
-    </section>
+    </div>
   </main>
 
   <footer>
     <p>Крутится на Github Pages (денег на кубовый кластер не хватило)</p>
-    <p>Сурсы на <a href="https://github.com/misshanya/k8s-pobeda">GitHub</a></p>
+    <p>Сурсы на <a href="https://github.com/Basster284/k8s-pobeda-legacy">GitHub</a></p>
   </footer>
 </body>
 </html>

@@ -1,59 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Set current year
-  const yearElement = document.getElementById('current-year');
+// миш, какие () =>
+window.onload = function() {
+  var yearElement = document.getElementById('current-year');
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  // Smooth scroll for arrow
-  const arrow = document.querySelector('.scroll-down-arrow');
-  if (arrow) {
-    arrow.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = arrow.getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-
-    // Hide arrow on scroll
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        arrow.style.opacity = '0';
-        arrow.style.pointerEvents = 'none';
-      } else {
-        arrow.style.opacity = '0.7';
-        arrow.style.pointerEvents = 'auto';
-      }
-    });
-  }
-
-  // Counter logic (simulating uptime from page load)
-  const startTime = Date.now();
+  var startTime = Date.now();
   
-  const hoursEl = document.getElementById('counter-hours');
-  const minutesEl = document.getElementById('counter-minutes');
-  const secondsEl = document.getElementById('counter-seconds');
-  const msEl = document.getElementById('counter-ms');
+  var hoursEl = document.getElementById('counter-hours');
+  var minutesEl = document.getElementById('counter-minutes');
+  var secondsEl = document.getElementById('counter-seconds');
+  var msEl = document.getElementById('counter-ms');
 
   function updateCounter() {
-    const diff = Date.now() - startTime;
+    var diff = Date.now() - startTime;
     
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-    const ms = diff % 1000;
+    var hours = Math.floor(diff / (1000 * 60 * 60));
+    var minutes = Math.floor((diff / (1000 * 60)) % 60);
+    var seconds = Math.floor((diff / 1000) % 60);
+    var ms = diff % 1000;
 
-    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
-    if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
-    if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
-    if (msEl) msEl.textContent = ms.toString().padStart(3, '0');
+    var hoursContent = (hours < 10 ? '0' : '') + hours;
+    var minutesContent = (minutes < 10 ? '0' : '') + minutes;
+    var secondsContent = (seconds < 10 ? '0' : '') + seconds;
 
-    requestAnimationFrame(updateCounter);
+    // зачем всё перерисовывать
+    if (hoursEl.textContent != hoursContent) 
+      hoursEl.textContent = hoursContent;
+    if (minutesEl.textContent != minutesContent) 
+      minutesEl.textContent = minutesContent;
+    if (secondsEl.textContent != secondsContent)
+      secondsEl.textContent = secondsContent;
+
+    if (msEl) {
+      var str = '00' + ms;
+      msEl.textContent = str.slice(-3);
+    }
+    // оно зато плавное
+    setTimeout(updateCounter, 1);
   }
-
-  if (hoursEl && minutesEl && secondsEl && msEl) {
-    requestAnimationFrame(updateCounter);
-  }
-});
+  updateCounter();
+};
