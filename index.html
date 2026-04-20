@@ -30,6 +30,7 @@
   h2 {
     color: #0f1316;
     font-size: 3rem;
+    font-weight: inherit;
   }
 
   .subtitle {
@@ -73,18 +74,28 @@
     vertical-align: middle;
     font-size: 3rem;
     text-align: center;
-    padding: 0 1em;
+    line-height: 1rem;
+    padding: 1rem;
+    background-color: #0f131629;
+    border-radius: 10px;
   }
 
   .counter-section {
     background-color: #326ce5;
     color: #fff;
-    padding: 4em;
+    padding: 2rem;
     border-radius: 20px;
+    margin-bottom: 6rem;
   }
 
   .number {
+    font-weight: 700;
     display: block;
+  }
+
+  .label {
+    font-size: 1rem;
+    text-transform: uppercase;
   }
 
   .stability-title {
@@ -92,10 +103,51 @@
   }
 
   #victory-counter {
-    margin: 2em auto;
+    margin: 3rem auto;
     border-spacing: 4em;
     display: table;
-    background-color: #0f131629;
+    border-spacing: 2rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    table, thead, tbody, th, td, tr {
+      display: block;
+      margin-bottom: 2rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+    }
+
+    .fact-card {
+      width: 100%;
+    }
+
+    #victory-counter {
+      width: 100%;
+      display: block;
+      border-spacing: 0;
+    }
+
+    .counter-item {
+      display: block;
+      float: left;
+      box-sizing: border-box;
+      width: 50%;
+      margin-bottom: 5px;
+      border: 4px solid transparent;
+      background-clip: padding-box;
+    }
   }
 </style>
 <body>
@@ -103,7 +155,7 @@
     <div id="hero-background"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes Logo" class="spinning-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/960px-Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" class="spinning-logo">
       <h1>КУБЫПОБЕДА</h1>
       <p class="subtitle">Очередной год победы Kubernetes</p>
     </div>
@@ -160,7 +212,7 @@
   </main>
 
   <footer>
-    <p>Крутится на Github Pages (денег на кубовый кластер не хватило)</p>
+    <p>Крутится на GitHub Pages (денег на кубовый кластер не хватило)</p>
     <p>Сурсы на <a href="https://github.com/Basster284/k8s-pobeda-legacy">GitHub</a></p>
   </footer>
 </body>

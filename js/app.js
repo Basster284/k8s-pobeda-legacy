@@ -37,7 +37,7 @@ window.onload = function() {
       msEl.textContent = str.slice(-3);
     }
     // оно зато плавное
-    setTimeout(updateCounter, 1);
+    setTimeout(updateCounter, 33);
   }
   updateCounter();
 };
